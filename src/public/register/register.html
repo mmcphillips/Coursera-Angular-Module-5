@@ -8,14 +8,18 @@
   <form name="registerForm" novalidate>
   <div class="form-group">
     <label for="firstName">First Name</label>
-    <input type="text" class="form-control" name="firstName" placeholder="First Name" required ng-model="registerCtrl.info.firstName">
+    <input type="text" class="form-control" name="firstName" placeholder="First Name" required ng-model="registerCtrl.info.firstName"
+    minlength="3"
+    ng-maxlength="20">
     <span ng-if="registerForm.firstName.$invalid && registerForm.firstName.$touched">First name is required</span>
   </div>
 
 <!--lastname-->
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" name="lastName" placeholder="Last Name" required ng-model="registerCtrl.info.lastName">
+    <input type="text" class="form-control" name="lastName" placeholder="Last Name" required ng-model="registerCtrl.info.lastName"
+    minlength="3"
+    ng-maxlength="20">
     <span ng-if="registerForm.lastName.$invalid && registerForm.lastName.$touched">Last name is required</span>
   </div>
 
