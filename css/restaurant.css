@@ -4,7 +4,9 @@ body {
   background-color: #61122f;
   font-family: 'Oxygen', sans-serif;
 }
-
+.text-centered {
+  text-align:center;
+}
 .initial-loading {
   margin-top: 60px;
 }

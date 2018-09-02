@@ -1,9 +1,7 @@
 (function () {
-"use strict";
+'use strict';
 
-angular.module('common')
-.service('MenuService', MenuService);
-
+angular.module('common').service('MenuService', MenuService);
 
 MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
@@ -15,7 +13,6 @@ function MenuService($http, ApiPath) {
     });
   };
 
-
   service.getMenuItems = function (category) {
     var config = {};
     if (category) {
@@ -26,7 +23,15 @@ function MenuService($http, ApiPath) {
       return response.data;
     });
   };
-
+//retrieve menuitem using shortname
+service.getMenuItem = function (shortName) {
+  var url = ApiPath + "/menu_items/" + shortName + ".json";
+  return $http.get(url).then(
+    function (response) {
+      return response.data;
+    }
+  );
+}
 }
 
 
